@@ -12,9 +12,9 @@
 
     <title>Dashboard</title>
 
-    <link rel="stylesheet" href="/assets/build/css/main.css?id=0bdfed9d223a54f69d02">
+    <link rel="stylesheet" href="{{asset('assets/build/css/main.css?id=0bdfed9d223a54f69d02')}}">
 
-    <script src="/assets/build/js/main.js?id=113d9ec8ef64cc3174bf"></script>
+    {{--    <script src="{{asset('assets/build/js/main.js?id=113d9ec8ef64cc3174bf')}}"></script>--}}
 </head>
 
 <body>
@@ -99,7 +99,7 @@
                     </svg>
                 </button>
 
-                
+
             </div>
 
             <div class="flex items-center">
