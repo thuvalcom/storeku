@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Frontend;
 use App\Livewire\Dashboard;
 use App\Livewire\ProductIndex;
 use App\Livewire\CategoryIndex;
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'layouts.frontend');
+Route::get('/', Frontend::class)->name('frontend');
 
 //Route::view('dashboard', 'dashboard')
 //    ->middleware(['auth', 'verified'])
