@@ -15,8 +15,7 @@
 
     <body>
         @include('layouts.inc.header')
-        @include('layouts.inc.hero')
-        @livewire('frontend-category')
+
         {{ $slot }}
 
         <section class="bg-gray-50 py-12 text-center text-gray-500">
@@ -104,6 +103,7 @@
             </div>
         </div>
         <script src="{{ asset('front/lib/front.js') }}"></script>
+        @stack('js')
     </body>
 
 </html>

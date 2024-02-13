@@ -31,4 +31,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'midtrans' => [
+        'serverKey' => env('MIDTRANS_SERVER_KEY'),
+        'clientKey' => env('MIDTRANS_CLIENT_KEY'),
+        'isSandbox' => env('MIDTRANS_IS_SANDBOX', true),
+    ],
+
+
 ];

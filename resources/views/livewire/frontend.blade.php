@@ -20,9 +20,7 @@
                                     </div>
                                 </div>
                                 <div class="py-2">
-                                    <a href="#"
-                                        class="inline-block rounded-full bg-red-600 px-4 py-1 text-center text-white hover:bg-red-700">Add
-                                        to cart</a>
+                                    @livewire('order-form', ['productId' => $product->id])
                                 </div>
                             </div>
                         </div>
