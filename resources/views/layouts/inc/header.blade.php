@@ -1,7 +1,7 @@
 <header class="text-gray-500">
     <nav class="container mx-auto flex flex-wrap items-center px-4 py-3"><a href="/"
             class="mr-3 text-xl font-bold text-gray-800 hover:text-gray-300">
-            Company </a>
+            @setting('logo') </a>
         <div class="ml-auto px-2 lg:order-2">
             <div class="ml-auto flex flex-row"><a href="#" class="px-2 py-4 hover:text-gray-300" aria-label="Search">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em"

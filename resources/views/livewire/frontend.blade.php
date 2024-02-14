@@ -1,3 +1,9 @@
+@section('title')
+    <title>@setting('metaTitle')</title>
+@endsection
+@push('meta')
+    <meta name="description" content="@setting('metaDescription')">
+@endpush
 <div>
     <section class="py-12 text-gray-400">
         <div class="container mx-auto px-4">

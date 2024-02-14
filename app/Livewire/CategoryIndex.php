@@ -28,9 +28,9 @@ class CategoryIndex extends Component
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         if ($this->keyword != null) {
-            $categories = Category::where('name', 'like', '%' . $this->keyword . '%')->orderBy('id', 'asc')->paginate(2);
+            $categories = Category::where('name', 'like', '%' . $this->keyword . '%')->orderBy('id', 'asc')->paginate(5);
         } else {
-            $categories = Category::orderBy('id', 'asc')->paginate(2);
+            $categories = Category::orderBy('id', 'asc')->paginate(5);
         }
         return view('livewire.category-index', compact('categories'));
     }

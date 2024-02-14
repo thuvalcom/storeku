@@ -4,10 +4,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>New page</title>
+        @yield('title')
         {{--    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.0.2/dist/tailwind.min.css"> --}}
+        @stack('meta')
         <script src="{{ asset('front/lib/script.js') }}"></script>
-        <meta name="description" content="Pinegrow Web Editor - Professional Services TailwindCSS Template">
+
         <link rel="stylesheet" href="{{ asset('front/lib/app.css') }}">
         <script src="{{ asset('front/lib/app.js') }}"></script>
         {{--    @vite(['resources/css/app.css', 'resources/js/app.js']) --}}

@@ -1,9 +1,10 @@
 <?php
 
 use App\Livewire\Frontend;
+use App\Livewire\Settings;
 use App\Livewire\Dashboard;
-use App\Livewire\OrderForm;
 
+use App\Livewire\OrderForm;
 use App\Livewire\OrderDetails;
 use App\Livewire\ProductIndex;
 use App\Livewire\CategoryIndex;
@@ -29,6 +30,7 @@ Route::post('/payment/notification', [PaymentController::class, 'handleNotificat
 Route::middleware(['auth'])->group(function () {
     Route::get('/products/create', ProductComponent::class)->name('products.create');
     Route::get('/products', ProductIndex::class)->name('products');
+    Route::get('/settings', Settings::class)->name('settings');
     Route::get('/categories', CategoryIndex::class)->name('categories');
     Route::get('/categories/create', CategoryComponent::class)->name('categories.create');
     Route::get('/payment/finish', [PaymentController::class, 'handleFinish'])->name('payment.finish');
