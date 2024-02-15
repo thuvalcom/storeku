@@ -2,19 +2,21 @@
 
 namespace App\Livewire;
 
-use App\Models\Category;
-use App\Models\Product;
 use App\Models\User;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+use App\Models\Product;
 use Livewire\Component;
-use Livewire\Attributes\Layout;
-use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use App\Models\Category;
+use Illuminate\Support\Str;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
+use Livewire\Attributes\Layout;
+use Illuminate\Support\Facades\Storage;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class ProductIndex extends Component
 {
     use WithPagination;
+    use WithFileUploads;
 
     #[Layout('layouts.backend')]
     public $name;
@@ -110,7 +112,6 @@ class ProductIndex extends Component
         $this->selected_id = $id;
         $this->confirmingDelete = true;
         $this->productToDelete = Product::find($id);
-
     }
 
     public function destroy($id): void
@@ -121,6 +122,4 @@ class ProductIndex extends Component
         session()->flash('success', 'Product Deleted successfully.');
         $this->redirect('/products', navigate: true);
     }
-
-
 }

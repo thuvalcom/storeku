@@ -53,6 +53,16 @@
                     <div class="w-full max-w-sm overflow-hidden rounded-md border bg-white shadow-md">
 
                         <form wire:submit.prevent="save">
+                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
+                                <label class="text-xs">Logo</label>
+
+                                <div class="relative mt-2 rounded-md shadow-sm">
+
+                                    <input type="file"
+                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
+                                        wire:model="logo">
+                                </div>
+                            </div>
 
                             <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
                                 <label class="text-xs">Meta Title</label>
@@ -124,14 +134,102 @@
                                         wire:model="adsCode">
                                 </div>
                             </div>
+                            <hr>
+                            <div class="p-2">
+                                <Span class="p-2 text-center font-bold">Hero Settings</Span>
+                            </div>
                             <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
-                                <label class="text-xs">Logo</label>
+                                <label class="text-xs">Hero Title</label>
 
                                 <div class="relative mt-2 rounded-md shadow-sm">
 
-                                    <input type="file"
+                                    <input type="text"
                                         class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
-                                        wire:model="logo">
+                                        wire:model="HeroTitle">
+                                </div>
+                            </div>
+                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
+                                <label class="text-xs">Hero Description</label>
+
+                                <div class="relative mt-2 rounded-md shadow-sm">
+
+                                    <input type="text"
+                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
+                                        wire:model="HeroDesc">
+                                </div>
+                            </div>
+                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
+                                <label class="text-xs">Hero Button</label>
+
+                                <div class="relative mt-2 rounded-md shadow-sm">
+
+                                    <input type="text"
+                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
+                                        wire:model="HeroBtn">
+                                </div>
+                            </div>
+
+                            <div class="p-2">
+                                <Span class="p-2 text-center font-bold">Contact Section</Span>
+                            </div>
+                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
+                                <label class="text-xs">Phone</label>
+
+                                <div class="relative mt-2 rounded-md shadow-sm">
+
+                                    <input type="text"
+                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
+                                        wire:model="Phone">
+                                </div>
+                            </div>
+                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
+                                <label class="text-xs">Address</label>
+
+                                <div class="relative mt-2 rounded-md shadow-sm">
+
+                                    <input type="text"
+                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
+                                        wire:model="Address">
+                                </div>
+                            </div>
+                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
+                                <label class="text-xs">Email</label>
+
+                                <div class="relative mt-2 rounded-md shadow-sm">
+
+                                    <input type="text"
+                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
+                                        wire:model="Email">
+                                </div>
+                            </div>
+                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
+                                <label class="text-xs">Facebook</label>
+
+                                <div class="relative mt-2 rounded-md shadow-sm">
+
+                                    <input type="text"
+                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
+                                        wire:model="Facebook">
+                                </div>
+                            </div>
+                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
+                                <label class="text-xs">Instagram</label>
+
+                                <div class="relative mt-2 rounded-md shadow-sm">
+
+                                    <input type="text"
+                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
+                                        wire:model="Instagram">
+                                </div>
+                            </div>
+                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
+                                <label class="text-xs">Twitter</label>
+
+                                <div class="relative mt-2 rounded-md shadow-sm">
+
+                                    <input type="text"
+                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
+                                        wire:model="Twitter">
                                 </div>
                             </div>
 

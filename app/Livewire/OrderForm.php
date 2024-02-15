@@ -9,6 +9,7 @@ use App\Models\Product;
 use Livewire\Component;
 use App\Models\OrderDetail;
 use Livewire\Attributes\Layout;
+use Illuminate\Support\Facades\URL;
 
 class OrderForm extends Component
 {
@@ -65,7 +66,7 @@ class OrderForm extends Component
             ]);
             return $this->redirect(route('order.details', $order->id));
         } else {
-
+            session(['product_redirect' => URL::previous()]);
             return redirect()->route('login');
         }
     }

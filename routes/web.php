@@ -1,9 +1,10 @@
 <?php
 
+use App\Livewire\Shop;
 use App\Livewire\Frontend;
 use App\Livewire\Settings;
-use App\Livewire\Dashboard;
 
+use App\Livewire\Dashboard;
 use App\Livewire\OrderForm;
 use App\Livewire\OrderDetails;
 use App\Livewire\ProductIndex;
@@ -20,7 +21,7 @@ Route::get('/', Frontend::class)->name('frontend');
 Route::get('/order-details/{order}', OrderDetails::class)->name('order.details');
 Route::get('/pay/{order}', [PaymentController::class, 'payNow'])->name('payment.payNow');
 Route::post('/payment/notification', [PaymentController::class, 'handleNotification']);
-
+Route::get('/shop/{slug}', Shop::class)->name('shop');
 
 
 
