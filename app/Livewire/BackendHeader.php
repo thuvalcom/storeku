@@ -4,6 +4,8 @@ namespace App\Livewire;
 
 use App\Models\User;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 
 class BackendHeader extends Component
@@ -19,4 +21,14 @@ class BackendHeader extends Component
     //     $users = User::all();
     //     Notification::send($users, new DashboardNotification());
     // }
+    public function logout()
+    {
+        Auth::guard('web')->logout();
+
+        Session::invalidate();
+        Session::regenerateToken();
+
+        // Redirect ke halaman login atau halaman lain yang diinginkan
+        return redirect('/login');
+    }
 }

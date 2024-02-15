@@ -13,8 +13,7 @@ use App\Livewire\ProductComponent;
 use App\Livewire\CategoryComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
-
-
+use App\Livewire\Account;
 
 Route::get('/', Frontend::class)->name('frontend');
 // web.php
@@ -38,6 +37,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/payment/pending', [PaymentController::class, 'handlePending'])->name('payment.pending');
     Route::get('/payment/error', [PaymentController::class, 'handleError'])->name('payment.error');
     Route::get('/payment/expire', [PaymentController::class, 'handleExpire'])->name('payment.expire');
+    Route::get('/account', Account::class)->name('account');
 });
 
 Route::get('/dashboard', Dashboard::class)

@@ -1,3 +1,6 @@
+@section('title')
+    <title>Order Details</title>
+@endsection
 <div class="container mx-4 p-10">
     <div class="flex w-full flex-col gap-4 bg-gray-100 p-4 lg:flex-row lg:p-8">
         <div class="mx-auto mb-4 h-full w-full rounded-md bg-white p-4 lg:mx-auto lg:w-8/12 lg:p-4">
