@@ -15,7 +15,7 @@ class Frontend extends Component
     public function render()
     {
         $categories = Category::all();
-        $products = Product::orderBy('id', 'desc')->paginate(5);
+        $products = Product::orderBy('id', 'desc')->paginate(3);
         foreach ($products as $product) {
             $product->price = 'Rp ' . number_format($product->price, 0, ',', '.');
         }

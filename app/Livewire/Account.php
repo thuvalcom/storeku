@@ -3,13 +3,13 @@
 namespace App\Livewire;
 
 use App\Models\User;
-use App\Models\Order;
 use Livewire\Component;
-use Livewire\Attributes\Layout;
+use Livewire\WithPagination;
+
 
 class Account extends Component
 {
-
+    use WithPagination;
     public $user;
     public function render()
     {

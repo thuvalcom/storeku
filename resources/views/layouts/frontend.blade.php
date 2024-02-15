@@ -17,7 +17,17 @@
     <body>
         @include('layouts.inc.header')
         @include('layouts.inc.hero')
+
         @livewire('frontend-category')
+        <div class="flex-no-wrap flex items-center py-4">
+            <div class="h-px max-w-full flex-grow bg-red-600"></div>
+            <div class="w-auto px-6"> <span class="block rounded-full bg-red-600 p-1 text-white"><svg viewBox="0 0 24 24"
+                        fill="currentColor" class="h-6 w-6">
+                        <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" />
+                    </svg></span>
+            </div>
+            <div class="h-px max-w-full flex-grow bg-red-600"></div>
+        </div>
         {{ $slot }}
 
         <section class="bg-gray-50 py-12 text-center text-gray-500">

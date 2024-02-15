@@ -1,5 +1,5 @@
 <header class="text-gray-500">
-    <nav class="container mx-auto flex flex-wrap items-center px-4 py-3"><a href="/"
+    <nav class="container mx-auto flex flex-wrap items-center px-4 py-3"><a wire:navigate href="/"
             class="mr-3 text-xl font-bold text-gray-800 hover:text-gray-300">
             @setting('logo') </a>
         <div class="ml-auto px-2 lg:order-2">

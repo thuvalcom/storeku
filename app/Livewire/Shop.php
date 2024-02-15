@@ -16,7 +16,7 @@ class Shop extends Component
     public $slug;
     public function render()
     {
-        $products = Product::all();
+        $products = Product::orderBy('id', 'Desc')->paginate(3);
         return view('livewire.shop', compact('products'));
     }
 

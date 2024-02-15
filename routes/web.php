@@ -27,21 +27,25 @@ Route::get('/shop/{slug}', Shop::class)->name('shop');
 //Route::view('dashboard', 'dashboard')
 //    ->middleware(['auth', 'verified'])
 //    ->name('dashboard');
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'role:admin', 'permission:Access All'])->group(function () {
     Route::get('/products/create', ProductComponent::class)->name('products.create');
     Route::get('/products', ProductIndex::class)->name('products');
     Route::get('/settings', Settings::class)->name('settings');
     Route::get('/categories', CategoryIndex::class)->name('categories');
     Route::get('/categories/create', CategoryComponent::class)->name('categories.create');
-    Route::get('/payment/finish', [PaymentController::class, 'handleFinish'])->name('payment.finish');
-    Route::get('/payment/pending', [PaymentController::class, 'handlePending'])->name('payment.pending');
-    Route::get('/payment/error', [PaymentController::class, 'handleError'])->name('payment.error');
-    Route::get('/payment/expire', [PaymentController::class, 'handleExpire'])->name('payment.expire');
-    Route::get('/account', Account::class)->name('account');
 });
 
+Route::middleware(['auth'])->group(
+    function () {
+        Route::get('/account', Account::class)->name('account');
+        Route::get('/payment/finish', [PaymentController::class, 'handleFinish'])->name('payment.finish');
+        Route::get('/payment/pending', [PaymentController::class, 'handlePending'])->name('payment.pending');
+        Route::get('/payment/error', [PaymentController::class, 'handleError'])->name('payment.error');
+        Route::get('/payment/expire', [PaymentController::class, 'handleExpire'])->name('payment.expire');
+    }
+);
 Route::get('/dashboard', Dashboard::class)
-    ->middleware(['auth', 'verified'])
+    ->middleware(['auth', 'verified', 'role:admin', 'permission:Access All'])
     ->name('dashboard');
 
 Route::view('profile', 'profile')
