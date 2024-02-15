@@ -3,9 +3,11 @@
 namespace App\Livewire;
 
 use App\Models\Setting;
+
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Layout;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class Settings extends Component
@@ -80,13 +82,19 @@ class Settings extends Component
         $oldLogoSetting = Setting::where('key', 'logo')->first();
         if ($oldLogoSetting) {
             $oldLogoPath = public_path('storage/' . $oldLogoSetting->value);
-            if (file_exists($oldLogoPath)) {
-                Storage::delete($oldLogoPath);
+            if (File::exists($oldLogoPath)) {
+                File::delete($oldLogoPath);
             }
+        }
+        if (File::exists($this->logo)) {
+            File::delete($this->logo);
         }
         if ($this->logo) {
             $logoPath = $this->logo->store('logos', 'public');
             $settings['logo'] = $logoPath;
+        }
+        if (File::exists($this->logo)) {
+            File::delete($this->logo);
         }
         foreach ($settings as $key => $value) {
             Setting::updateOrCreate(['key' => $key], ['value' => $value]);
