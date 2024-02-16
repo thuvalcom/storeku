@@ -73,11 +73,25 @@
                     @endcan
                     @can('Access All')
                         <a class="mt-4 flex items-center px-6 py-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                            wire:navigate href="{{ route('pages') }}">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 6c0-1.11.89-2 2-2h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 10h0M12 14h0M7 18h0" />
+                            </svg>
+
+                            <span class="mx-3">Pages</span>
+                        </a>
+                    @endcan
+                    @can('Access All')
+                        <a class="mt-4 flex items-center px-6 py-2 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
                             wire:navigate href="{{ route('settings') }}">
                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                    d="M19.416 8.58a8 8 0 010 6.882l1.558 1.559a2 2 0 010 2.828l-2.828 2.828a2 2 0 01-2.828 0l-1.559-1.558a8 8 0 01-6.882 0l-1.558 1.558a2 2 0 01-2.828 0L2.929 19.07a2 2 0 010-2.828L4.488 14.68a8 8 0 010-6.882L2.93 5.309a2 2 0 010-2.828l2.828-2.828a2 2 0 012.828 0l1.559 1.558a8 8 0 016.882 0l1.558-1.558a2 2 0 012.828 0l2.828 2.828a2 2 0 010 2.828l-1.559 1.558zM12 15a3 3 0 100-6 3 3 0 000 6z" />
                             </svg>
 
                             <span class="mx-3">Settings</span>

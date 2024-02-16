@@ -1,11 +1,16 @@
 <?php
 
 use App\Livewire\Shop;
+use App\Livewire\About;
+use App\Livewire\Pages;
+
+use App\Livewire\Account;
+use App\Livewire\Contact;
 use App\Livewire\Frontend;
 use App\Livewire\Settings;
-
 use App\Livewire\Dashboard;
 use App\Livewire\OrderForm;
+use App\Livewire\PagesCreate;
 use App\Livewire\OrderDetails;
 use App\Livewire\ProductIndex;
 use App\Livewire\CategoryIndex;
@@ -13,7 +18,7 @@ use App\Livewire\ProductComponent;
 use App\Livewire\CategoryComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
-use App\Livewire\Account;
+use App\Livewire\ProductDetails;
 
 Route::get('/', Frontend::class)->name('frontend');
 // web.php
@@ -21,6 +26,9 @@ Route::get('/order-details/{order}', OrderDetails::class)->name('order.details')
 Route::get('/pay/{order}', [PaymentController::class, 'payNow'])->name('payment.payNow');
 Route::post('/payment/notification', [PaymentController::class, 'handleNotification']);
 Route::get('/shop/{slug}', Shop::class)->name('shop');
+Route::get('/about', About::class)->name('about');
+Route::get('/contact', Contact::class)->name('contact');
+Route::get('/shop/category/{slug}', ProductDetails::class)->name('shop.category');
 
 
 
@@ -30,6 +38,8 @@ Route::get('/shop/{slug}', Shop::class)->name('shop');
 Route::middleware(['auth', 'role:admin', 'permission:Access All'])->group(function () {
     Route::get('/products/create', ProductComponent::class)->name('products.create');
     Route::get('/products', ProductIndex::class)->name('products');
+    Route::get('/pages', Pages::class)->name('pages');
+    Route::get('/pages/create', PagesCreate::class)->name('pages.create');
     Route::get('/settings', Settings::class)->name('settings');
     Route::get('/categories', CategoryIndex::class)->name('categories');
     Route::get('/categories/create', CategoryComponent::class)->name('categories.create');

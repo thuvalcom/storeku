@@ -44,18 +44,19 @@
                             <div
                                 class="pointer-events-none absolute left-0 top-0 z-10 flex w-full flex-row-reverse justify-between p-4">
                                 <span class="rounded-full bg-red-500 px-2 py-1 text-xs text-white">New</span>
-                            </div><a href="{{ route('shop', $product->slug) }}"
+                            </div><a wire:navigate href="{{ route('shop', $product->slug) }}"
                                 class="block border-b hover:opacity-75"><img
                                     src="{{ asset('storage/' . $product->image) }}"
                                     class="w-full group-hover:opacity-50" alt="{{ $product->name }}" width="300"
                                     height="240" /></a>
                             <div class="px-6 py-4">
                                 <div class="-mx-2 flex items-center justify-between py-1">
-                                    <div class="px-2 py-1"><a href="#"
+                                    <div class="px-2 py-1">
+                                        <<a wire:navigate href="{{ route('shop', $product->slug) }}"
                                             class="mb-1 block text-gray-700 hover:text-blue-500">
                                             <h3 class="text-xl font-medium">{{ $product->name }}</h3>
-                                        </a>
-                                        <p class="text-sm">{{ str($product->description)->words(4) }}</p>
+                                            </a>
+                                            <p class="text-sm">{{ str($product->description)->words(4) }}</p>
                                     </div>
                                     <div class="px-2 py-1">
                                         <p class="text-2xl font-light text-gray-400">{{ $product->price }}</p>

@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Layout;
 
@@ -14,6 +15,7 @@ class CategoryComponent extends Component
     public $name;
     public $description;
     public $image;
+    public $slug;
     public $validatedData;
     public $selected_id;
     public $updateMode = false;
@@ -26,16 +28,19 @@ class CategoryComponent extends Component
             'name' => 'required',
             'description' => 'required',
             'image' => 'nullable|image|max:2048',
+            'slug' => 'required|unique:categories,slug',
         ]);
+        $this->slug = Str::slug($this->name, '-');
         $imagePath = $this->image->store('category_images', 'public');
         Category::create([
             'name' => $this->name,
             'description' => $this->description,
             'image' => $imagePath,
+            'slug' => $this->slug,
         ]);
 
         // Reset form fields
-        $this->reset(['name', 'description', 'image']);
+        $this->reset(['name', 'description', 'image', 'slug']);
 
         session()->flash('success', 'Category successfully created.');
         $this->redirect('/categories', navigate: true);

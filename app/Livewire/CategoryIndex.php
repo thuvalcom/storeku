@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Layout;
@@ -19,6 +20,7 @@ class CategoryIndex extends Component
     public $name;
     public $description;
     public $image;
+    public $slug;
     public $selected_id;
     public $updateMode = false;
     public $confirmingDelete = false;
@@ -42,6 +44,7 @@ class CategoryIndex extends Component
         $this->name = $category->name;
         $this->description = $category->description;
         $this->image = $category->image;
+        $this->slug = $category->slug;
         $this->updateMode = true;
     }
 
@@ -54,6 +57,7 @@ class CategoryIndex extends Component
         ]);
 
         $category = Category::findOrFail($this->selected_id);
+        $this->slug = Str::slug($this->name, '-');
         if ($this->image instanceof TemporaryUploadedFile && $this->image->isValid()) {
             // Delete the old image from the storage
             if ($category->image) {
@@ -65,12 +69,13 @@ class CategoryIndex extends Component
         $category->update([
             'name' => $this->name,
             'description' => $this->description,
+            'slug' => $this->slug,
         ]);
         if (isset($imagePath)) {
             $category->update(['image' => $imagePath]);
         }
 
-        $this->reset(['name', 'description', 'image']);
+        $this->reset(['name', 'description', 'image', 'slug']);
         $this->updateMode = false;
         session()->flash('success', 'Category successfully updated.');
         $this->redirect('/categories', navigate: true);

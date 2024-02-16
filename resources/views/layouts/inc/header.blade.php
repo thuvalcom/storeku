@@ -51,9 +51,9 @@
         <div data-name="nav-menu"
             class="hidden w-full flex-grow space-y-2 lg:flex lg:w-auto lg:items-center lg:space-x-4 lg:space-y-0">
             <div class="ml-auto flex flex-col lg:flex-row"><a href="/"
-                    class="px-0 py-2 hover:text-gray-300 lg:px-4">Home</a> <a href="#"
-                    class="px-0 py-2 hover:text-gray-300 lg:px-4">About</a> <a href="#"
-                    class="px-0 py-2 hover:text-gray-300 lg:px-4">Collection</a>
+                    class="px-0 py-2 hover:text-gray-300 lg:px-4">Home</a> <a wire:navigate href="/about"
+                    class="px-0 py-2 hover:text-gray-300 lg:px-4">About</a> <a wire:navigate href="/contact"
+                    class="px-0 py-2 hover:text-gray-300 lg:px-4">Contact</a>
                 <a href="#Product" class="px-0 py-2 hover:text-gray-300 lg:px-4">Shop</a><a href="#"
                     class="px-0 py-2 hover:text-gray-300 lg:px-4">Blog</a>
             </div>

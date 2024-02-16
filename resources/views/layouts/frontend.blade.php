@@ -107,8 +107,8 @@
                     <div class="w-full px-4 py-2 md:flex-1">
                         <p>&copy; {{ date('Y') }}. All Rights Reserved - @setting('metaTitle')</p>
                     </div>
-                    <div class="w-full px-4 py-2 sm:w-auto"><a href="#" class="hover:text-blue-600">Privacy
-                            Policy</a> | <a href="#" class="hover:text-blue-600">Terms of Use</a>
+                    <div class="w-full px-4 py-2 sm:w-auto"><a href="/about" class="hover:text-blue-600">About</a> | <a
+                            href="/contact" class="hover:text-blue-600">Contact</a>
                     </div>
                 </div>
             </div>

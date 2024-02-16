@@ -1,11 +1,9 @@
-<div>
+<div class="flex-1 overflow-y-auto overflow-x-hidden bg-gray-200">
     <main class="flex-1 overflow-y-auto overflow-x-hidden bg-gray-200">
         <div class="container mx-auto px-6 py-8">
-
-            <h3 class="text-3xl font-semibold text-gray-700">Add Category</h3>
-
-            <div class="mt-4">
-                <h4 class="text-gray-600">Add Category</h4>
+            <h3 class="text-3xl font-semibold text-gray-700">Add New Page</h3>
+            <div class="mt-8">
+                <h4 class="text-gray-600">Page</h4>
                 <div class="mt-4">
 
                     @if (session('success'))
@@ -50,66 +48,49 @@
                 </div>
 
                 <div class="mt-4">
-                    <div class="w-full max-w-sm overflow-hidden rounded-md border bg-white shadow-md">
+                    <div class="rounded-md bg-white p-6 shadow-md">
+                        <h2 class="text-lg font-semibold capitalize text-gray-700">Add Page</h2>
 
-                        <form wire:submit.prevent="save">
-
-                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
-                                <label class="text-xs">Name</label>
-
-                                <div class="relative mt-2 rounded-md shadow-sm">
-
-                                    <input type="text"
-                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
-                                        wire:model="name">
+                        <form wire:submit="save">
+                            <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                <div>
+                                    <label class="text-gray-700" for="name">Name</label>
+                                    <input class="form-input mt-2 w-full rounded-md focus:border-indigo-600"
+                                        type="text" id="name" wire:model="name">
                                 </div>
-                            </div>
-                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
-                                <label class="text-xs">slug</label>
-
-                                <div class="relative mt-2 rounded-md shadow-sm">
-
-                                    <input type="text"
-                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
-                                        wire:model="slug">
+                                @error('name')
+                                    <em>{{ $message }}</em>
+                                @enderror
+                                <div>
+                                    <label class="text-gray-700" for="name">Slug</label>
+                                    <input class="form-input mt-2 w-full rounded-md focus:border-indigo-600"
+                                        type="text" id="name" wire:model="slug">
                                 </div>
-                            </div>
-                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
-                                <label class="text-xs">Description</label>
+                                @error('slug')
+                                    <em>{{ $message }}</em>
+                                @enderror
 
-                                <div class="relative mt-2 rounded-md shadow-sm">
+                                <div>
+                                    <label class="text-gray-700" for="description">Description</label>
+                                    <textarea class="form-input mt-2 w-full rounded-md focus:border-indigo-600" id="description" wire:model="description"></textarea>
+                                </div>
+                                @error('description')
+                                    <em>{{ $message }}</em>
+                                @enderror
 
-                                    <input type="text"
-                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
-                                        wire:model="description">
-                                </div>
-                            </div>
-                            <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
-                                <label class="text-xs">Upload Image</label>
-                                <div class="relative mt-2 rounded-md shadow-sm">
-                                    <input type="file" name="image" id="image"
-                                        class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
-                                        wire:model="image">
-                                </div>
                             </div>
 
-                            <div class="flex items-center justify-between px-5 py-3">
-                                <a wire:navigate href="{{ route('dashboard') }}" type="button"
-                                    class="rounded-md bg-gray-200 px-3 py-1 text-sm text-gray-700 hover:bg-gray-300 focus:outline-none">
-                                    Cancel
-                                </a>
-                                <button type="submit"
-                                    class="rounded-md bg-indigo-600 px-3 py-1 text-sm text-white hover:bg-indigo-500 focus:outline-none">
+                            <div class="mt-4 flex justify-end">
+                                <button
+                                    class="rounded-md bg-gray-800 px-4 py-2 text-gray-200 hover:bg-gray-700 focus:bg-gray-700 focus:outline-none">
                                     Save
                                 </button>
                             </div>
                         </form>
-
                     </div>
                 </div>
-
             </div>
-
         </div>
+
     </main>
 </div>

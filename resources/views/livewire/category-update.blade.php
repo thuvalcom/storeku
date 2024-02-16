@@ -23,6 +23,16 @@
                         </div>
                     </div>
                     <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
+                        <label class="text-xs">Slug</label>
+
+                        <div class="relative mt-2 rounded-md shadow-sm">
+
+                            <input type="text"
+                                class="form-input w-full appearance-none rounded-md px-12 py-2 focus:border-indigo-600"
+                                wire:model="slug">
+                        </div>
+                    </div>
+                    <div class="border-b bg-gray-200 px-5 py-6 text-gray-700">
                         <label class="text-xs">Description</label>
 
                         <div class="relative mt-2 rounded-md shadow-sm">
