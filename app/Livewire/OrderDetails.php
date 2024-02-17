@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Order;
+use App\Models\Product;
 use Livewire\Component;
 use App\Models\OrderDetail;
 use Livewire\Attributes\Layout;
@@ -16,10 +17,10 @@ class OrderDetails extends Component
 
     public function render()
     {
-
+        $products = Product::orderBy('id', 'Desc')->paginate(3);
         return view('livewire.order-details', [
             'orderDetails' => $this->getOrderDetails(),
-        ]);
+        ], compact('products'));
     }
     public function getOrderDetails()
     {

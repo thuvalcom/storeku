@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Category;
+use App\Models\Product;
 use Livewire\WithPagination;
 use Livewire\Attributes\Layout;
 
@@ -17,7 +18,6 @@ class ProductDetails extends Component
     public function mount($slug)
     {
         $this->category = Category::where('slug', $slug)->first();
-
         if ($this->category) {
             $this->products = $this->category->products;
         } else {

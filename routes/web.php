@@ -14,11 +14,15 @@ use App\Livewire\PagesCreate;
 use App\Livewire\OrderDetails;
 use App\Livewire\ProductIndex;
 use App\Livewire\CategoryIndex;
+use App\Livewire\Blog\PostIndex;
+use App\Livewire\ProductDetails;
+use App\Livewire\Blog\PostCreate;
 use App\Livewire\ProductComponent;
 use App\Livewire\CategoryComponent;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Blog\PostCategoryIndex;
+use App\Livewire\Blog\PostCategoryCreate;
 use App\Http\Controllers\PaymentController;
-use App\Livewire\ProductDetails;
 
 Route::get('/', Frontend::class)->name('frontend');
 // web.php
@@ -43,6 +47,11 @@ Route::middleware(['auth', 'role:admin', 'permission:Access All'])->group(functi
     Route::get('/settings', Settings::class)->name('settings');
     Route::get('/categories', CategoryIndex::class)->name('categories');
     Route::get('/categories/create', CategoryComponent::class)->name('categories.create');
+    Route::get('/post-category/create', PostCategoryCreate::class)->name('postcategory.create');
+    Route::get('/post-category', PostCategoryIndex::class)->name('postcategory');
+    Route::get('/posts', PostIndex::class)->name('posts');
+    Route::get('/posts-create', PostCreate::class)->name('posts.create');
+    Route::get('/blog', \App\Livewire\Blog\PostFrontend::class)->name('blog');
 });
 
 Route::middleware(['auth'])->group(

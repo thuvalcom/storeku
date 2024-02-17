@@ -26,7 +26,8 @@
 
                                 </div>
                                 <div class="px-2 py-1">
-                                    <p class="text-2xl font-light text-red-600">{{ $product->price }}</p>
+                                    <p class="text-2xl font-light text-red-600">Rp
+                                        {{ number_format($product->price, 0, ',', '.') }}</p>
                                 </div>
                             </div>
                             <div class="py-2">
