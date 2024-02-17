@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Blog\PostCategoryIndex;
 use App\Livewire\Blog\PostCategoryCreate;
 use App\Http\Controllers\PaymentController;
+use App\Livewire\Blog\PostSingle;
 
 Route::get('/', Frontend::class)->name('frontend');
 // web.php
@@ -33,6 +34,8 @@ Route::get('/shop/{slug}', Shop::class)->name('shop');
 Route::get('/about', About::class)->name('about');
 Route::get('/contact', Contact::class)->name('contact');
 Route::get('/shop/category/{slug}', ProductDetails::class)->name('shop.category');
+Route::get('/blog', \App\Livewire\Blog\PostFrontend::class)->name('blog');
+Route::get('/post/{slug}', PostSingle::class)->name('post');
 
 
 
@@ -51,7 +54,6 @@ Route::middleware(['auth', 'role:admin', 'permission:Access All'])->group(functi
     Route::get('/post-category', PostCategoryIndex::class)->name('postcategory');
     Route::get('/posts', PostIndex::class)->name('posts');
     Route::get('/posts-create', PostCreate::class)->name('posts.create');
-    Route::get('/blog', \App\Livewire\Blog\PostFrontend::class)->name('blog');
 });
 
 Route::middleware(['auth'])->group(

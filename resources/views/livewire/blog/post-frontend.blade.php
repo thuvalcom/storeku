@@ -11,13 +11,13 @@
                     <img src="{{ url('storage/' . $post->image) }}" alt="$post->title" class="h-auto max-w-lg rounded-lg">
                 </div>
                 <div class="p-4">
-                    <a wire:navigate href="#">
+                    <a wire:navigate href="{{ route('post', $post->slug) }}">
                         <h1 class="mb-2 text-3xl font-bold tracking-tighter">{{ $post->title }}</h1>
                     </a>
                     <p class="text-gray-700">{!! nl2br(e($post->description)) !!}</p>
                 </div>
                 <div class="mt-2">
-                    <a wire:navigate href="#" type="button"
+                    <a wire:navigate href="{{ route('post', $post->slug) }}" type="button"
                         class="inline-block cursor-pointer rounded-full bg-red-600 px-4 py-1 text-center text-white hover:bg-red-700">
                         Read More
                     </a>
@@ -48,7 +48,7 @@
             @endforeach
 
         </ul>
-        {{ $products->links() }}
+
         <div class="bg-white p-4">
             <h2 class="mb-2 text-3xl font-bold">Posts</h2>
         </div>
@@ -58,7 +58,7 @@
                     <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
                         class="h-16 w-16 rounded object-cover">
                     <div class="flex flex-col justify-center p-4">
-                        <a wire:navigate href="#"
+                        <a wire:navigate href="{{ route('post', $post->slug) }}"
                             class="font-semibold text-gray-700 hover:text-blue-500">{{ $post->title }}</a> <span
                             class="text-sm text-gray-500">{{ $post->created_at }}</span>
                     </div>
