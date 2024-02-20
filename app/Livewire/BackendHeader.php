@@ -15,12 +15,6 @@ class BackendHeader extends Component
     {
         return view('livewire.backend-header');
     }
-
-    // public function sendNotification()
-    // {
-    //     $users = User::all();
-    //     Notification::send($users, new DashboardNotification());
-    // }
     public function logout()
     {
         Auth::guard('web')->logout();
